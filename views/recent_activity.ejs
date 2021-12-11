@@ -1,6 +1,28 @@
 <%-include('partials/header'); -%>
 
 <h1>📜Recent Activity📜</h1>
+<hr>
+<div class="container">
+
+  <%  recentactivity.forEach(function(activity){ %>
+    <div class="container-fluid outer mt-5 ">
+      <%if(activity.ref!==null){%>
+        <%if(activity.type==='PushEvent'){%>
+          <h3>Dejun pushed a new commit to <a href="https://github.com/<%=activity.repo%>"><%=activity.repo%></a></h3>
+          <h5>Date: <%=activity.date%></h5>
+
+          <% } else if (activity.type==='CreateEvent'){%>
+            <h3>Dejun created a new repository: <a href="https://github.com/<%=activity.repo%>"><%=activity.repo%></a></h3>
+            <h5>Date: <%=activity.date%></h5>
+            <% } %>
+            <% } %>
+    </div>
 
 
-<%-include('partials/footer'); -%>
+    <% }) %>
+
+
+</div>
+
+</body>
+</html>

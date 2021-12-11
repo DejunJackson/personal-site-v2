@@ -1,5 +1,7 @@
 //Require installed packages
 const express = require("express");
+const request = require('request');
+
 
 
 //use express to create app constant
@@ -21,7 +23,40 @@ app.get("/projects", function(req, res){
 });
 
 app.get("/recentactivity", function(req, res){
-  res.render('recent_activity');
+  const account = process.env.ACC
+  const options = {
+    url: 'https://api.github.com/users/DejunJackson/events/public',
+    headers: {
+      'User-Agent': 'request',
+      'Authorization': 'Basic' + account
+    }
+  };
+
+  var recentactivity = []
+  function callback(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      const info = JSON.parse(body);
+
+      for (i=0; i<info.length;i++){
+        new_date = info[i].created_at.slice(0, 10)
+        recentactivity[i] = {
+          "type" : info[i].type,
+          "repo" : info[i].repo.name,
+          "date" : new_date,
+          "ref": info[i].payload.ref
+      }
+    }
+
+    res.render('recent_activity', {
+      recentactivity:recentactivity
+    })
+
+  }
+  else{
+    console.log(error);
+  }
+}
+request(options, callback);
 });
 
 app.get("/contact", function(req, res){

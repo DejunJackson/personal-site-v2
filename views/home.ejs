@@ -3,13 +3,49 @@
 
 
     <div class="intro container my-5">
-      <h1>Hello my name is <strong style='color: red'>Dejun Jackson</strong></h1>
+      <h1></h1>
 
     </div>
 
-    <div class=>
-      <img src="images/profile-pic.jpg"  class="profile"   alt="A picture of me">
+    <div class="container profile ">
+      <img src="images/profile-pic.jpg"  class="profile-pic"   alt="A picture of me">
     </div>
 
 
-<%-include('partials/footer'); -%>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded',function(event){
+  var dataText = [ "Hello!", "My name is Dejun Jackson", "I develop software🖥️", "Welcome to my website!"];
+  function typeWriter(text, i, fnCallback) {
+    if (i < (text.length)) {
+     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+      }, 100);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == 'function') {
+      setTimeout(fnCallback, 1000);
+    }
+  }
+  // start a typewriter animation for a text in the dataText array
+   function StartTextAnimation(i) {
+     if (typeof dataText[i] == 'undefined'){
+        setTimeout(function() {
+          StartTextAnimation(0);
+        }, 20000);
+     }
+     // check if dataText[i] exists
+    if (i < dataText[i].length) {
+     typeWriter(dataText[i], 0, function(){
+       StartTextAnimation(i + 1);
+     });
+    }
+  }
+  // start the text animation
+  StartTextAnimation(0);
+});
+</script>
+
+</body>
+</html>

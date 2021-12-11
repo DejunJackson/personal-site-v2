@@ -14,7 +14,7 @@ a {
   color: #99A799;
 }
 a:hover {
-  background-color: #FEF5ED;
+  color: #11324D;
 }
 .nav-link{
   font-size: 1.5rem;
@@ -25,9 +25,16 @@ a:hover {
   font-weight: bold;
   font-size: 7rem;
 }
-
-
-p{
+h3{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+}
+h5{
+  font-family: 'Press Start 2P', cursive;
+}
+p {
+  font-size: 1.5rem;
+  margin-top: 3%;
   font-family: 'Press Start 2P', cursive;
 }
 
@@ -37,19 +44,19 @@ nav{
   background-color: #ADC2A9;
   font-family: 'Press Start 2P', cursive;
 }
-
-p{
-  font-size: 1.5rem;
-  margin-top: 3%;
-}
-
-
 .profile{
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+position: relative;
+left: 50%;
+transform: translateX(-50%);
+max-width: 100%;
+ text-align: center;
+}
+.profile-pic{
+
   border-radius: 50%;
-  max-width:40%;
+  width: 40%;
   height:auto;
+}
+html, body {
+    height: 100%;
 }
