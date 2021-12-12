@@ -1,4 +1,4 @@
-h1{
+#title{
   font-size: 3rem;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
@@ -19,13 +19,16 @@ a:hover {
 .nav-link{
   font-size: 1.5rem;
 }
+.nav-link:hover{
+  background-color: #FEF5ED;
+}
 /* home styles */
 .home-links{
   list-style-type: none;
   font-weight: bold;
   font-size: 7rem;
 }
-h3{
+h3, h2{
   font-family: 'Press Start 2P', cursive;
   font-size: 1.5rem;
 }
@@ -37,8 +40,18 @@ p {
   margin-top: 3%;
   font-family: 'Press Start 2P', cursive;
 }
+.home-img{
+  width: 75%;
+  height:70%;
+  object-fit:contain;
+
+}
 
 
+hr {
+    width:100%;
+
+}
 
 nav{
   background-color: #ADC2A9;
@@ -59,4 +72,7 @@ max-width: 100%;
 }
 html, body {
     height: 100%;
+}
+.project-img{
+  width: 30%;
 }
