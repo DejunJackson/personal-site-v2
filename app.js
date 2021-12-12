@@ -1,7 +1,7 @@
 //Require installed packages
 const express = require("express");
 const request = require('request');
-
+const port = process.env.PORT || 3000;
 
 
 //use express to create app constant
@@ -67,6 +67,6 @@ app.get("/story", function(req, res){
   res.render('story');
 });
 //listen on port 3000
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log("Server started on port 3000");
 });
