@@ -7,4 +7,5 @@ This version is deployed here: [https://dejun-jackson.herokuapp.com/](https://de
 - Bootstrap
 - Nodejs(Express)
 - EJS (A templating engine)
+- Github API (To display my recent events, commits, PRs, etc.)
 
