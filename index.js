@@ -6,8 +6,8 @@ const port = process.env.PORT || 3000;
 
 //use express to create app constant
 const app = express();
-
-app.set('view engine', 'ejs');
+app.set("views", join(__dirname, "views"));
+app.set("view engine", "ejs");
 app.use(express.static("public"));
 //what is sent when home routes is accessed
 app.get("/", function(req, res){
