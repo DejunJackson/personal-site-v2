@@ -1,6 +1,6 @@
 # personal-site-v2
 This is the second version of my personal site, you can see the first version [here](https://github.com/DejunJackson/Personal-Site).
-This version is deployed here: [https://dejun-jackson.herokuapp.com/](https://dejun-jackson.herokuapp.com/).
+This version is deployed here: [https://personal-site-v2-alpha.vercel.app/](https://personal-site-v2-alpha.vercel.app/).
 
 # Technologies
 - Html/CSS
